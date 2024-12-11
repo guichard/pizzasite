@@ -1,10 +1,11 @@
+:root{
+    --couleurdefond: rgba(255, 255, 255, 0.95);
+
+}
+
 body{
+   background-color: var(--couleurdefond);
     
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: hwb(131 0% 45% / 0.250);
     height: 350px;
     margin: 0;
     font-family: fantasy;
