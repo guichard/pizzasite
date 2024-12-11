@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pizzeria.css">
+   
+    <title>Pizzeria</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#presentation" class="nav-link">presentation</a></li>
+                <li><a href="#menu" class="nav-link">menu</a></li>
+                <li><a href="#gallery" class="nav-link">gallery</a></li>
+                <li><a href="#formulaire" class="nav-link">formulaire</a></li>
+            </ul>
+        </nav>
+    <div class="darkmode">
+
+        <button onclick="toggleDarkMode()">Dark Mode</button>
+
+    </div> 
+    
+    </header>
+<main>
+    <section class="content-box">
+        <section class="logos">
+            <img src="./gpizzeria imgk.jpeg" alt="logos">
+        </section>
+    
+        <section id="presentation">
+            <h1>PASTA LA VISTA</h1>
+            <p>Envie de farfalle au pesto ? De penne rigate à la crème de fromages ?
+                Alors direction Pasta La Vista, le nouveau restaurant exclusivement dédié aux pâtes,
+                rue Sainte-Claire, à Clermont-Ferrand.</p>
+        </section>
+    </section>
+    
+    
+    <section id="menu">
+        <div class="menu">
+        <img src="./gpasta-menu-food-template-e2f95dfdeec8d36411b67f6d4daf0226_screen.jpg" alt="menu pasta">
+        <img src="./gmenupizza.jpg" alt="menu pizza">
+        <img src="./gmenudessert2.jpg" alt="menu desserts">
+        </div>
+    </section>
+
+
+    <section id="gallery">
+        <div class="gallery-box">
+            <div class="gallery-item">
+                <img src="./gpizza-stock.jpg" alt="pizza viande">
+            </div>
+            <div class="gallery-item">
+                <img src="./gpizza part.jpg" alt="pizza chorizo">
+            </div>
+            <div class="gallery-item">
+                <img src="./gpizza partveggi.jpg" alt="pizza veggie">
+            </div>
+            <div class="gallery-item">
+                <img src="./gcreamy-seafood-pasta-1-1024x1536.jpg" alt="pasta fdm">
+            </div>
+            <div class="gallery-item">
+                <img src="./gpastatomte.jpg" alt="pasta tomate">
+            </div>
+            <div class="gallery-item">
+                <img src="./gpastapesto.jpg" alt="pasta pesto">
+            </div>
+            <div class="gallery-item">
+                <img src="./gcakedessertfraise.jpg" alt="gateau">
+            </div>
+            <div class="gallery-item">
+                <img src="./gdessertmoussechoco.jpg" alt="moussechoco">
+            </div>
+            <div class="gallery-item">
+                <img src="./gtiramisu.jpg" alt="tiramisu">
+            </div>
+        </div>
+    </section>
+    
+   
+
+    <section id="formulaire">
+        <h3>Réservation</h3>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="personnes">Nombre de personnes :</label>
+                <input type="number" id="personnes" name="personnes" placeholder="Nombre de personnes" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="date">Date :</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="heure">Heure :</label>
+                <input type="time" id="heure" name="heure" required>
+            </div>
+    
+            <div class="form-group">
+                <button type="submit">Réserver</button>
+            </div>
+        </form>
+    </section>
+    
+     </main>
+    <footer>
+        <section id="coordonnees">
+            <div class="logo">
+                <img src="./gpizzeria imgk.jpeg" alt="Logo du restaurant">
+            </div>
+
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/nom_de_votre_page" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f">Facebook</i>
+                        </a>
+
+                        <a href="https://www.instagram.com/nom_de_votre_compte" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram">instagram</i> 
+                        </a>
+                        <h2>Pasta la Vista</h2>
+                        <p>123 rue Sainte-Claire, à Clermont-Ferrand.</p>
+                        
+                    </div>  
+                </section>
+        
+
+    </footer>
+
+    <script>
+        function validateForm() {
+            var nom = document.getElementById("nom").value;
+            if (nom.length < 3) {
+                alert("le nom doit contenir 3 caracteres minimum.")
+                return false;
+            }
+        
+            var personnes = document.getElementById("personnes").value
+            if (personnes <= 0  || ! Number.isInteger(parseFloat(personnes))) {
+            alerte ("le nombre doit etre entier.");
+            return false;
+ } }
+    </script>
+     <script src="./pastaVista.js"></script>
+</body>
+</html>
