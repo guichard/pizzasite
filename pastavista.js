@@ -37,7 +37,6 @@ function validateForm() {
             }
             var personnes = document.getElementById("personnes").value
             if (personnes <= 0  || ! Number.isInteger(parseFloat(personnes))) {
-            alerte ("le nombre doit etre entier.")};
+            alert ("le nombre doit etre entier.")};
             return false;
-            } 
-  
+            
