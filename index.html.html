@@ -3,157 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pizzeria.css">
-   
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="./src/output.css" rel="stylesheet">
     <title>Pizzeria</title>
 </head>
-<body>
+<body class="bg-white text-black">
+    <div class="p-4">
+      
+    </div>
     <header>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="#presentation" class="nav-link">presentation</a></li>
-                <li><a href="#menu" class="nav-link">menu</a></li>
-                <li><a href="#gallery" class="nav-link">gallery</a></li>
-                <li><a href="#formulaire" class="nav-link">formulaire</a></li>
-            </ul>
+        <nav class="bg-gray-600">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-between">
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden"></div>
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <a href="#presentation" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">presentation</a>
+                            <a href="#menu" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">menu</a>
+                            <a href="#gallery" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">gallery</a>
+                            <a href="#formulaire" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">formulaire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sm:hidden" id="mobile-menu">
+                <div class="space-y-1 px-2 pb-3 pt-2">
+                    <a href="#presentation" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300" aria-current="page">presentation</a>
+                    <a href="#menu" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">menu</a>
+                    <a href="#gallery" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">gallery</a>
+                    <a href="#formulaire" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">formulaire</a>
+                </div>
+            </div>
+            <button id="darkModeToggle" class="px-4 py-2 bg-gray-800 text-white rounded-lg">
+                Dark Mode
+              </button> 
         </nav>
-    <div class="darkmode">
-
-        <button onclick="toggleDarkMode()">Dark Mode</button>
-
-    </div> 
-    
+        
     </header>
-<main>
-    <section class="content-box">
-        <section class="logos">
-            <img src="./logopizza.jpeg" alt="logos">
+    <main>
+        <!-- regler la hauteur et l'argeur autour du logo -->
+        <div class="flex justify-center items-center min-h-screen">
+            <section class="w-[40%] h-4/5 border-4 border-indigo-600 shadow-lg">
+                <img src="./logopizza.jpeg" alt="logos" class="w-full max-h-[200px] object-contain transition-all duration-300 transform hover:scale-110 cursor-pointer" onclick="zoomImage(this)">
+            </section>
+        </div>
+        <div id="zoom-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+            <img id="zoomed-img" src="" alt="zoomed" class="max-w-full max-h-full">
+        </div>
+        <!-- gerer le padding entre ces deux section -->
+        <section class="border-2 border-gray-300 shadow-lg p-10 px-[calc(1rem-5px)] rounded-3xl bg-gray-50 hover:bg-gray-100 transition-all duration-300 mb-8 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <h1 class="font-bold flex justify-center text-2xl transform hover:scale-105 transition-transform duration-300 dark:text-white">
+                PASTA LA VISTA
+            </h1>
+            
+            <p class="text-xl transform hover:scale-105 transition-transform duration-300 dark:text-gray-300">
+                Envie de farfalle au pesto ? De penne rigate à la crème de fromages ? 
+                Alors direction Pasta La Vista, le nouveau restaurant exclusivement dédié aux pâtes, 
+                rue Sainte-Claire, à Clermont-Ferrand.
+            </p>
         </section>
-    
-        <section id="presentation">
-            <h1>PASTA LA VISTA</h1>
-            <p>Envie de farfalle au pesto ? De penne rigate à la crème de fromages ?
-                Alors direction Pasta La Vista, le nouveau restaurant exclusivement dédié aux pâtes,
-                rue Sainte-Claire, à Clermont-Ferrand.</p>
+        
+        
+
+       
+        <section>
+            <div class="grid grid-cols-3 gap-4">
+                <img src="./gpasta-menu-food-template-e2f95dfdeec8d36411b67f6d4daf0226_screen.jpg" alt="menu pasta" class="w-[80%] max-w-[300px] h-4/5 transition-transform transform hover:scale-110">
+                <img src="./gmenupizza.jpg" alt="menu pizza" class="w-[80%] max-w-[300px] h-4/5 transition-transform transform hover:scale-110">
+                <img src="./gmenudessert2.jpg" alt="menu desserts" class="w-[80%] max-w-[300px] h-4/5 transition-transform transform hover:scale-110">
+            </div>
         </section>
-    </section>
+        
     
     
-    <section id="menu">
-        <div class="menu">
-        <img src="./gpasta-menu-food-template-e2f95dfdeec8d36411b67f6d4daf0226_screen.jpg" alt="menu pasta">
-        <img src="./gmenupizza.jpg" alt="menu pizza">
-        <img src="./gmenudessert2.jpg" alt="menu desserts">
+    
+
+        
+        
+    </main>
+    <section id="gallery" class="p-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="gallery-item">
+                <img src="./gpizza-stock.jpg" alt="pizza viande" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+            </div>
+            <div class="gallery-item">
+                <img src="./gpizza-part.jpg" alt="pizza chorizo" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+            </div>
+            <div class="gallery-item">
+                <img src="./gpizza-partveggi.jpg" alt="pizza veggie" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+            </div>
+            <div class="gallery-item">
+                <img src="./gcreamy-seafood-pasta-1-1024x1536.jpg" alt="pasta fdm" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+            </div>
+            <div class="gallery-item">
+                <img src="./gpastatomte.jpg" alt="pasta tomate" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+            </div>
+            <div class="gallery-item">
+                <img src="./patecarbo.jpg" alt="pasta carbonara" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+            </div>
+            <div class="gallery-item">
+                <img src="./gcakedessertfraise.jpg" alt="gateau" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+            </div>
+            <div class="gallery-item">
+                <img src="./gdessertmoussechoco.jpg" alt="moussechoco" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+            </div>
+            <div class="gallery-item">
+                <img src="./gtiramisu.jpg" alt="tiramisu" class="w-full h-64 object-cover rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+            </div>
         </div>
     </section>
-
-
-    <section id="gallery">
-        <div class="gallery-box">
-            <div class="gallery-item">
-                <img src="./gpizza-stock.jpg" alt="pizza viande">
-            </div>
-            <div class="gallery-item">
-                <img src="./gpizza-part.jpg" alt="pizza chorizo">
-            </div>
-            <div class="gallery-item">
-                <img src="./gpizza-partveggi.jpg" alt="pizza veggie">
-            </div>
-            <div class="gallery-item">
-                <img src="./gcreamy-seafood-pasta-1-1024x1536.jpg" alt="pasta fdm">
-            </div>
-            <div class="gallery-item">
-                <img src="./gpastatomte.jpg" alt="pasta tomate">
-            </div>
-            <div class="gallery-item">
-                <img src="./gpastapesto.jpg" alt="pasta pesto">
-            </div>
-            <div class="gallery-item">
-                <img src="./gcakedessertfraise.jpg" alt="gateau">
-            </div>
-            <div class="gallery-item">
-                <img src="./gdessertmoussechoco.jpg" alt="moussechoco">
-            </div>
-            <div class="gallery-item">
-                <img src="./gtiramisu.jpg" alt="tiramisu">
-            </div>
-        </div>
-    </section>
-    
-   
-
-    <section id="formulaire">
-        <h3>Réservation</h3>
-        <form action="#" method="post">
+    <section id="formulaire" class="p-8 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-semibold mb-6">Réservation</h3>
+        <form action="#" method="post" class="space-y-6">
             <div class="form-group">
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                <label for="nom" class="block text-sm font-medium mb-2">Nom :</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="name" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-    
             <div class="form-group">
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" placeholder="Votre email" required>
+                <label for="email" class="block text-sm font-medium mb-2">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required autocomplete="email" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-    
             <div class="form-group">
-                <label for="personnes">Nombre de personnes :</label>
-                <input type="number" id="personnes" name="personnes" placeholder="Nombre de personnes" required>
+                <label for="personnes" class="block text-sm font-medium mb-2">Nombre de personnes :</label>
+                <input type="number" id="personnes" name="personnes" placeholder="Nombre de personnes" required autocomplete="quantity" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-    
             <div class="form-group">
-                <label for="date">Date :</label>
-                <input type="date" id="date" name="date" required>
+                <label for="date" class="block text-sm font-medium mb-2">Date :</label>
+                <input type="date" id="date" name="date" required autocomplete="bday" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-    
             <div class="form-group">
-                <label for="heure">Heure :</label>
-                <input type="time" id="heure" name="heure" required>
+                <label for="heure" class="block text-sm font-medium mb-2">Heure :</label>
+                <input type="time" id="heure" name="heure" required autocomplete="time" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-    
             <div class="form-group">
-                <button type="submit">Réserver</button>
+                <button type="submit" class="animate-pulse w-full py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">Réserver</button>
             </div>
         </form>
+        
     </section>
-    
-     </main>
-    <footer>
-        <section id="coordonnees">
-            <div class="logo">
-                <img src="./logopizza.jpeg" alt="Logo du restaurant">
+    <footer class="bg-gray-800 text-white py-6">
+        <section id="coordonnees" class="max-w-7xl mx-auto px-4 text-center">
+            <div class="logo mb-4">
+                <img src="./logopizza.jpeg" alt="Logo du restaurant" class="mx-auto w-32 h-auto">
             </div>
-
-                    <div class="social-media">
-                        <a href="https://www.facebook.com/nom_de_votre_page" target="_blank" class="social-icon">
-                            <i class="fab fa-facebook-f">Facebook</i>
-                        </a>
-
-                        <a href="https://www.instagram.com/nom_de_votre_compte" target="_blank" class="social-icon">
-                            <i class="fab fa-instagram">instagram</i> 
-                        </a>
-                        <h2>Pasta la Vista</h2>
-                        <p>123 rue Sainte-Claire, à Clermont-Ferrand.</p>
-                        
-                    </div>  
-                </section>
-        
-
+            <div class="social-media mb-6">
+                <a href="https://www.facebook.com/nom_de_votre_page" target="_blank" class="social-icon mx-2 text-blue-600 hover:text-blue-800">
+                    <i class="fab fa-facebook-f text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/nom_de_votre_compte" target="_blank" class="social-icon mx-2 text-pink-600 hover:text-pink-800">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+            </div>
+            <h2 class="text-xl font-bold mb-2">Pasta la Vista</h2>
+            <p class="text-lg">123 rue Sainte-Claire, à Clermont-Ferrand</p>
+        </section>
     </footer>
-
-    <script>
-        function validateForm() {
-            var nom = document.getElementById("nom").value;
-            if (nom.length < 3) {
-                alert("le nom doit contenir 3 caracteres minimum.")
-                return false;
-            }
-        
-            var personnes = document.getElementById("personnes").value
-            if (personnes <= 0  || ! Number.isInteger(parseFloat(personnes))) {
-            alerte ("le nombre doit etre entier.");
-            return false;
- } }
-    </script>
-     <script src="./pastaVista.js"></script>
+    <script src="./pastavista.js"></script>
 </body>
 </html>
