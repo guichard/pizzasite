@@ -1070,3 +1070,24 @@ return false;
 
   plugins: [],
 };
+@keyframes changeColor {
+    0% {
+        color: #FF5733; /* Rouge */
+    }
+    25% {
+        color: #FF8D1A; /* Orange */
+    }
+    50% {
+        color: #FFFF00; /* Jaune */
+    }
+    75% {
+        color: #33FF57; /* Vert */
+    }
+    100% {
+        color: #FF5733; /* Retour à Rouge */
+    }
+}
+
+.animate-color {
+    animation: changeColor 5s infinite; /* Animation sur 5 secondes, répétée indéfiniment */
+}
